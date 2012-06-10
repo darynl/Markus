@@ -58,3 +58,26 @@ function done_thinking() {
   $('loading_list').hide();
 }
 */
+  
+function markButtonCheck(checkbox, unrelease_status) {
+  box = document.getElementById(checkbox);
+  release = document.getElementsByName('release_results');
+  unrelease = document.getElementsByName('unrelease_results')
+  if (box.checked == false) {
+    for (i=0;i<release.length;i++) {
+      release[i].setAttribute('disabled', 'disabled');
+    }
+    for (i=0;i<unrelease.length;i++) {
+      unrelease[i].setAttribute('disabled', 'disabled');
+    }
+  } else {
+    for (i=0;i<release.length;i++) {
+      release[i].removeAttribute('disabled', 0);
+    }
+    if (unrelease_status) {
+      for (i=0;i<unrelease.length;i++) {
+        unrelease[i].removeAttribute('disabled', 0);
+      }
+    } 
+  }  
+}

@@ -77,9 +77,9 @@
       <% if @current_user.admin? %>
         <div class="floatLeft">
           <%= submit_tag I18n.t("browse_submissions.release_marks"),
-            :name => "release_results" %>
+            :name => "release_results", :disabled => "disabled", :title => "Select groups to use this option." %>
           <%= submit_tag I18n.t("browse_submissions.unrelease_marks"),
-            :name => "unrelease_results" %>
+            :name => "unrelease_results", :disabled => "disabled", :title => "Selected groups must have released marks to use this option." %>
           <% if !@assignment.results_average.nil? %>
             <%= I18n.t("browse_submissions.class_average",
                        :results_average => h(@assignment.results_average)) %>
@@ -175,11 +175,11 @@
       <div class="floatLeft">
         <% if @current_user.admin? %>
           <%= submit_tag I18n.t("browse_submissions.release_marks"),
-                                :name => "release_results" %>
+                                :name => "release_results", :disabled => "disabled", :title => "Select groups to use this option." %>
           <%= submit_tag I18n.t("browse_submissions.unrelease_marks"),
-                                :name => "unrelease_results" %>
+                                :name => "unrelease_results", :disabled => "disabled", :title => "Selected groups must have released marks to use this option." %>
         <% end %>
-      </div>
+        </div>
       <div class="ap_filters" id="ap_filters_2">
         <%= render  :partial => 'submissions_table_filters',
                     :locals => {

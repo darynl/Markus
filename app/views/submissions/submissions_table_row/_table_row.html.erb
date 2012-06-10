@@ -6,11 +6,17 @@
 <% end %>>
 
 <td>
+  <% unless !grouping.current_submission_used.result.released_to_students or remark_complete_but_unreleased(grouping.current_submission_used) %>
+    <% unrelease = true %>
+  <% else %>
+    <% unrelease = false %>
+  <% end %>
   <input type="checkbox"
          name="groupings[]"
          class="ap_selectable"
          id="grouping_<%= grouping.id %>"
-         value="<%= grouping.id %>" />
+         value="<%= grouping.id %>"
+         onclick="markButtonCheck('grouping_<%= grouping.id %>', <%= unrelease %>)" />
 </td>
 <td>
   <% if !grouping.has_submission? %>

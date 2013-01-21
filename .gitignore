@@ -1,7 +1,7 @@
 # Files ignored by git
 
 config/database.yml
-config/local_environment_override.rb
+config/environments/local_environment_override.rb
 
 # Data, app documentation, log and bundle folder
 data/

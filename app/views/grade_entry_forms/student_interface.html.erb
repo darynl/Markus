@@ -23,6 +23,7 @@
           <td class="grades_table_cell"><%= h(@student.user_name) %></td>
           <td class="grades_table_cell"><%= h(@student.last_name) %></td>
           <td class="grades_table_cell"><%= h(@student.first_name) %></td>
+          <td class="grades_table_cell"><%= @student.section.nil? ? "" : h(@student.section.name) %></td>
 
           <% @grade_entry_form.grade_entry_items.each do |grade_entry_item| %>
             <% grade = grade_entry_student.grades.find_by_grade_entry_item_id(grade_entry_item.id) %>
